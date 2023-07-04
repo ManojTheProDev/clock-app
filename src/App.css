@@ -1,38 +1,49 @@
-.App {
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  margin: 50px auto;
+  cursor: pointer;
+}
+
+.hand {
+  position: absolute;
+  width: 2px;
+  height: 120px;
+  background-color: #000;
+  left: 149px;
+  top: 40px;
+  transform-origin: bottom center;
+  transition: transform 0.2s;
+}
+
+.second-hand {
+  background-color: red;
+}
+
+.minute-hand {
+  background-color: blue;
+  height: 100px;
+  left: 150px;
+  top: 60px;
+}
+
+.hand.dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.display {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.display input {
+  padding: 5px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 18px;
 }
