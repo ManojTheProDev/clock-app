@@ -25,9 +25,9 @@ const App = () => {
     console.log(seconds);
     const updatedMinutes = parseInt(seconds / 59);
     console.log(updatedMinutes);
-    setMinutes(updatedMinutes);
+    setMinutes((minute) => minute + updatedMinutes);
 
-    const updatedDisplayTime = `${String(updatedMinutes).padStart(2, '0')}:${String(
+    const updatedDisplayTime = `${String(minutes).padStart(2, '0')}:${String(
       seconds % 60
     ).padStart(2, '0')}`;
     setDisplayTime(updatedDisplayTime);
